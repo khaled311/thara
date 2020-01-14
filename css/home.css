@@ -300,12 +300,12 @@ html[dir="ltr"] .sideNav .opt {
 }
 
 html[dir="ltr"] .sideNav .opt .lang a {
-  color: #C8AC66;
+  color: #FFF;
 }
 
 .sideNav .opt .close1 {
   font-size: 20px;
-  color: #C8AC66;
+  color: #FFF;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
