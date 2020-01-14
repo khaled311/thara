@@ -266,7 +266,7 @@ html[dir="ltr"] .sideNav.open {
 .sideNav .logo {
   position: absolute;
   bottom: 0;
-  right: 11px;
+  right: 20px;
   width: 80px;
   /* mix-blend-mode: multiply; */
   opacity: 0.3;
