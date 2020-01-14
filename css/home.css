@@ -269,7 +269,11 @@ html[dir="ltr"] .sideNav.open {
   right: 20px;
   width: 80px;
   /* mix-blend-mode: multiply; */
-  opacity: 0.3;
+}
+
+.sideNav .logo img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 
 .sideNav .opt {
