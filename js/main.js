@@ -60,11 +60,13 @@ $(function() {
   // Search Open
   $("header span.lnr.lnr-magnifier").click(function() {
     $(".searchh").toggleClass("open");
+    $("html").css("overflow", "hidden")
   });
 
   // Search Close
   $(".searchh, .searchh form > span.lnr").click(function() {
     $(".searchh").toggleClass("open");
+    $("html").css("overflow", "auto")
   });
 
   $(".searchh form").on("click", function(e) {

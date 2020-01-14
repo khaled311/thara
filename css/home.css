@@ -235,8 +235,8 @@ html[dir="ltr"] .sideNav {
   height: 100%;
   background-color: #404042;
   position: absolute;
-  top: 80%;
-  left: -10%;
+  bottom: -450px;
+  left: -30px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -248,8 +248,8 @@ html[dir="ltr"] .sideNav {
   height: 100%;
   background-color: #404042;
   position: absolute;
-  top: -70%;
-  left: 45%;
+  top: -390px;
+  left: 110px;
   -webkit-transform: rotate(45deg) translateX(-50%);
           transform: rotate(45deg) translateX(-50%);
 }
@@ -394,7 +394,7 @@ html[dir="ltr"] .sideNav .links .list > li a.lnr:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
