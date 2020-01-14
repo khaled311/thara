@@ -542,6 +542,12 @@ header {
   overflow: hidden;
 }
 
+@media (max-width: 480px) {
+  header {
+    height: 80vh;
+  }
+}
+
 header > img {
   position: absolute;
   top: 0;
@@ -869,6 +875,13 @@ header > .content h2 {
     width: 100%;
     text-align: center;
     font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  header > .content h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
   }
 }
 
