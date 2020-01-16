@@ -1386,16 +1386,32 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
           transform: scale(1) rotate(0);
 }
 
-.projects .projectss .project:nth-child(4), .projects .projectss .project:nth-child(6) {
-  margin-top: -111px;
+@media (min-width: 992px) {
+  .projects .projectss .project:nth-child(4), .projects .projectss .project:nth-child(6) {
+    margin-top: -85px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects .projectss .project:nth-child(4), .projects .projectss .project:nth-child(6) {
+    margin-top: -111px;
+  }
 }
 
 .projects .projectss .project:nth-child(5) {
   margin-top: 34px;
 }
 
-.projects .projectss .project:nth-child(7), .projects .projectss .project:nth-child(8) {
-  margin-top: -256px;
+@media (min-width: 992px) {
+  .projects .projectss .project:nth-child(7), .projects .projectss .project:nth-child(8) {
+    margin-top: -204px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects .projectss .project:nth-child(7), .projects .projectss .project:nth-child(8) {
+    margin-top: -256px;
+  }
 }
 
 .projects .owl-stage {
@@ -1644,7 +1660,7 @@ html[dir="ltr"] footer .contact .icon {
 
 @media (max-width: 480px) {
   footer .contact .icon {
-    margin: 0;
+    margin: 0 !important;
     margin-bottom: 10px;
   }
 }
