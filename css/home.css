@@ -96,7 +96,7 @@ ul.res {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -708,6 +708,7 @@ header nav .content {
 
 header nav .content .links {
   margin-top: 35px;
+  position: relative;
 }
 
 @media (max-width: 991px) {
@@ -756,6 +757,18 @@ header nav .content .links ul li a {
   transition: 0.5s;
 }
 
+@media (min-width: 992px) {
+  html[dir="ltr"] header nav .content .links ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html[dir="ltr"] header nav .content .links ul li a {
+    font-size: 18px;
+  }
+}
+
 header nav .content .links ul li a.lnr:before {
   position: absolute;
   top: 50%;
@@ -787,7 +800,7 @@ header nav .content .links ul li .dropDown {
   right: 0;
   top: 200%;
   width: 160px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: transparent;
   padding: 7px 10px;
   opacity: 0;
   visibility: hidden;
@@ -802,8 +815,8 @@ header nav .content .links ul li .dropDown {
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
   border-radius: 4px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s cubic-bezier(1, 0, 0, 1);
+  transition: 0.3s cubic-bezier(1, 0, 0, 1);
 }
 
 html[dir="ltr"] header nav .content .links ul li .dropDown {
@@ -814,30 +827,9 @@ html[dir="ltr"] header nav .content .links ul li .dropDown {
           transform: translateX(-20px);
 }
 
-header nav .content .links ul li .dropDown:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-width: 6px;
-  border-color: transparent transparent #FFF;
-  border-style: solid;
-  bottom: 100%;
-  position: absolute;
-  right: 45px;
-}
-
-html[dir="ltr"] header nav .content .links ul li .dropDown:after {
-  right: unset;
-  left: 45px;
-}
-
 header nav .content .links ul li .dropDown li {
   margin: 0 !important;
   width: 100%;
-  opacity: 0;
-  -webkit-transition: .5s .2s;
-  transition: .5s .2s;
 }
 
 header nav .content .links ul li .dropDown li:not(:last-child) {
@@ -848,7 +840,6 @@ header nav .content .links ul li .dropDown li a {
   line-height: 2.4;
   font-size: 15px;
   font-family: "sa";
-  text-align: center;
   display: block;
   color: #404042;
   width: 100%;
@@ -871,10 +862,6 @@ header nav .content .links ul li:hover .dropDown {
   visibility: visible;
 }
 
-header nav .content .links ul li:hover .dropDown li {
-  opacity: 1;
-}
-
 header nav .content .links ul li span.lnr-magnifier {
   cursor: pointer;
   font-size: 24px;
@@ -894,6 +881,12 @@ header > .content {
           transform: translateY(-30%);
   right: 0;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  header > .content .container > p {
+    display: none;
+  }
 }
 
 header > .content p {
@@ -1031,6 +1024,43 @@ header .social a i {
 
 header .social a i:hover {
   color: #fff;
+}
+
+.dropDown-bg {
+  -webkit-transition: 0.3s cubic-bezier(1, 0, 0, 1);
+  transition: 0.3s cubic-bezier(1, 0, 0, 1);
+  position: absolute;
+  top: 160%;
+  background: white;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  display: block;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropDown-bg:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-width: 6px;
+  border-color: transparent transparent #FFF;
+  border-style: solid;
+  bottom: 100%;
+  position: absolute;
+  right: 45px;
+}
+
+html[dir="ltr"] .dropDown-bg:after {
+  right: unset;
+  left: 45px;
+}
+
+.dropDown-bg.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .info-section {
@@ -1172,8 +1202,8 @@ html[dir="ltr"] .goals-section {
 
 @media (min-width: 1500px) {
   html[dir="ltr"] .goals-section {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(79%, #f7f7f7), color-stop(0, #fff));
-    background-image: linear-gradient(to right, #f7f7f7 79%, #fff 0);
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(79%, #f7f7f7), color-stop(0, #fff));
+    background-image: linear-gradient(to left, #f7f7f7 79%, #fff 0);
   }
 }
 
@@ -1186,8 +1216,6 @@ html[dir="ltr"] .goals-section {
 }
 
 .goals-section .img-box {
-  -webkit-transition: .5s;
-  transition: .5s;
   position: relative;
   -webkit-transform: translateX(45px);
           transform: translateX(45px);
@@ -1403,8 +1431,8 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 .projects .head a {
   font-size: 20px;
   color: #404042;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .projects .head a:hover {
@@ -1482,10 +1510,10 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
   width: 135px;
   height: 40px;
   outline: 1px solid #fff;
-  -webkit-transition: 0.5s 0.3s;
-  transition: 0.5s 0.3s;
-  -webkit-transform: scale(0.8) rotate(-7deg) translateZ(0);
-          transform: scale(0.8) rotate(-7deg) translateZ(0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(0.8) translateZ(0);
+          transform: scale(0.8) translateZ(0);
   opacity: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1495,9 +1523,9 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
   font-size: 16px;
   font-family: "sa";
   color: #fff;
-  line-height: 30px;
-  -webkit-transition: 0.5s 0.3s;
-  transition: 0.5s 0.3s;
+  line-height: 31px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .projects .projectss .project .overlay a:hover {
@@ -1746,7 +1774,8 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 footer {
   padding: 65px 0 50px;
   background-image: url("../images/footer-bg.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: bottom;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -2114,8 +2143,8 @@ footer .frm button {
   position: absolute;
   top: 50%;
   left: 0px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-51%);
+          transform: translateY(-51%);
   width: 45px;
   height: 45px;
   background-color: #c8ac66;
@@ -2218,7 +2247,7 @@ footer .social a:hover {
 }
 
 footer .social a:hover i {
-  color: #0b0b0b;
+  color: #404042;
 }
 
 .end {
