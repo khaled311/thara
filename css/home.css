@@ -308,19 +308,6 @@ html[dir="ltr"] .sideNav.open {
           transform-origin: top right;
 }
 
-.sideNav .logo {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-  width: 80px;
-  /* mix-blend-mode: multiply; */
-}
-
-.sideNav .logo img {
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1);
-}
-
 .sideNav .opt {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -582,6 +569,8 @@ header {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (max-width: 480px) {
@@ -821,6 +810,8 @@ html[dir="ltr"] header nav .content .links ul li .dropDown {
   left: 0;
   right: unset;
   width: 170px;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
 }
 
 header nav .content .links ul li .dropDown:after {
@@ -1324,7 +1315,8 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 
 @media (max-width: 480px) {
   .service-section .card-box {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
+    padding-top: 20px;
   }
 }
 
@@ -1361,7 +1353,7 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 
 @media (max-width: 991px) {
   .projects {
-    padding: 55px 0;
+    padding: 55px 0 65px;
   }
 }
 
@@ -1383,7 +1375,10 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 
 @media (max-width: 480px) {
   .projects .head {
-    padding: 0 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 50px;
   }
 }
 
@@ -1397,6 +1392,11 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 @media (max-width: 480px) {
   .projects .head p {
     font-size: 25px;
+    margin-left: 25px;
+  }
+  html[dir="ltr"] .projects .head p {
+    margin-right: 25px;
+    margin-left: 0;
   }
 }
 
@@ -1607,6 +1607,7 @@ html[dir="ltr"] .goals-section .goals-continer .goal-box .caption {
 @media (max-width: 991px) {
   .news .col-sm-6 {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -1756,6 +1757,7 @@ footer {
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: #404042;
+    background-attachment: unset;
   }
 }
 
@@ -1782,7 +1784,7 @@ footer .contact {
             align-items: flex-start;
     position: relative;
     z-index: 9;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding: 20px 0 70px;
   }
 }

@@ -181,13 +181,13 @@ $(function() {
     try {
         // Parallax Effect
         $(window).on("scroll", function() {
-            if ($(window).width() >= 767) {
+            // if ($(window).width() >= 767) {
                 var ypos = window.pageYOffset,
                     img = document.querySelector("header > img");
                 if (img) {
-                    img.style.top = ypos * 1 + "px";
+                    img.style.top = ypos * .9 + "px";
                 }
-            }
+            // }
         });
     } catch (error) {}
     
@@ -241,7 +241,7 @@ $(function() {
             ) {
                 ypos = 0;
                 if (img) {
-                    img.style.top = ypos * 0.12 + "px";
+                    img.style.top = ((ypos * 0.07) - 30) + "px";
                 }
             }
     
@@ -251,10 +251,21 @@ $(function() {
             ) {
                 ypos = ypos / 4;
                 if (img) {
-                    img.style.top = ypos * 0.12 + "px";
+                    img.style.top = ((ypos * 0.07) - 30) + "px";
                 }
             }
         }
     });
+
+    // Footer FIXED Background
+    $(window).on("resize", function() {
+        if($(window).width() >= 992){
+            $("footer").css("background-position-y", $(window).innerHeight() - ($("footer").outerHeight() + 65));
+        }
+    });
+
+    if($(window).width() >= 992){
+        $("footer").css("background-position-y", $(window).innerHeight() - ($("footer").outerHeight() + 65));
+    }
 });
 
