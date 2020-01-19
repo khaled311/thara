@@ -202,7 +202,7 @@ $(function() {
             $(this).scrollTop() >= $(".info-section").offset().top / 2
         ) {
             $(".timer").countTo({
-                speed: 500
+                speed: 700
             });
             a = 1;
         }
@@ -298,10 +298,10 @@ $(function() {
         dropDownBg.width(`${coords.width + 20}px`);
         dropDownBg.height(`${coords.height}px`);
         if($("html").attr("dir") == "rtl"){
-            right = $("#links").width() - (coords.left + $(this).width() + 60);
+            right = $("#links").width() - (coords.left + $(this).width() + 55);
             dropDownBg.css({right: right});
         }else{
-            right = coords.left - 30;
+            right = coords.left - 25;
             dropDownBg.css({left: right});
         }
     }
